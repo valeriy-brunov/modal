@@ -1,0 +1,15 @@
+{
+    "name": "valeriy-brunov/modal",
+    "description": "Modal плагин для CakePHP",
+    "type": "cakephp-plugin",
+    "home": "https://github.com/valeriy-brunov/modal",
+    "license": "MIT",
+    "require": {
+        "cakephp/cakephp": "^3.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Modal\\": "src/"
+        }
+    }
+}

@@ -1,0 +1,277 @@
+/************************************************************/
+/*          Общие стили для всех модальных окон.            */
+/************************************************************/
+
+.modalBody {
+    overflow: hidden;
+}
+
+#overlay {
+    background-color: #000;
+    opacity: 0.82;
+}
+
+/* Слой, занимающий всё пространство под модальным окном. Необходим для создания полосы прокрутки страницы. */
+div.modal {
+    display: none;
+    position: fixed;
+    overflow-y: scroll;
+    z-index: 2001;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+/* Класс по умолчанию для оболочки модального окна. */
+div.modal-list {
+    width: 80%;
+    margin: 10px auto;
+}
+
+/* Если модальное окно по высоте ниже окна просмотра браузера, добавляется стиль "modal-center" по центру. */
+div.modal-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+/* Задаёт стили внутри модального окна. */
+div.modal-setting {
+    background-color: #FFF;
+    box-shadow: 0 0 5px 2px;
+    z-index: 2002;
+}
+
+div.modal-header {
+    border-bottom: 1px solid #C8C8C8;
+}
+
+div.modal-header,
+div.modal-footer {
+	height: 50px;
+	font-size: 16px;
+    background-color: #F0F0F0;
+}
+
+div.modal-content {
+    position: relative;
+	min-height: 100px;
+}
+
+div.modal-footer {
+    border-top: 1px solid #C8C8C8;
+}
+
+/************************************************************/
+/*      Стили для модального окна просмотра фотографий      */
+/*               в увеличенном формате.                     */
+/************************************************************/
+
+div.photo,
+div.info-user,
+div.action-photo,
+div.frame {
+    margin: 0;
+    display: none;
+}
+#browserPhoto div.photo {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+#browserPhoto div.photo img {
+    max-height: 600px; /*высота фото не более */
+}
+#browserPhoto #big-photo {
+    float: left;
+    padding: 0;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    background-color: #000;
+    min-height: 600px;/* для крутящего труббера */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#big-photo,
+#managing {
+    width: 70%;/* Ширина области с фотографией большого формата. */
+}
+
+#previw div.photo {
+    float: left;
+    width: auto;
+    display: block;
+    margin-right: 5px;
+}
+#previw-info {
+    float:left;
+}
+
+/* ------ div ------- */
+#comments {
+    width: 30%;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+}
+    #comments > div { margin-top: 20px; }
+    #comments div:first-child { margin-top: 0; }
+
+    /* ------ div ------- */
+    #previw { margin-top: 0; }
+        #previw img {
+            height: 40px;
+            width: 40px;
+            float: left;
+        }
+
+        /* ------ div ------- */
+        #previw-info {
+            font-size: 12px;
+            height: 40px;
+        }
+            #previw-info div:first-child {
+                font-weight: bold;
+                color: green;
+            }
+            #previw-info div { line-height: 20px; }
+
+    /* ------- div -------- */
+    div.frame {
+        overflow: scroll;
+        overflow-x: hidden;
+        height: 300px;
+        border: 1px solid green;
+    }
+    div.not-com {
+        border: none !important;
+        overflow: hidden !important;
+    }
+    #browserPhoto div.photo.comment-photo {
+		display: block;
+		width: auto;
+		float: left;
+	}
+	div.comment-photo img {
+		display: block;
+		width: 40px;
+		height: 40px;
+	}
+
+    /* ------- div --------- */
+
+        /* ------- form -------- */
+
+            /* ------- div ---------*/
+                div.text label { display: none; }
+
+                /* ------- input -------- */
+                #text {
+                    width: 100%;
+                    box-sizing: border-box;
+                    margin-bottom: 3px;
+                    padding: 3px;
+                    resize: none;
+                    /*height: 24px;*/
+                }
+
+            /* ------- div --------*/
+
+                /* ------ input ------- */
+                #add-comment {
+                    background-color: green;
+                    color: #FFF;
+                }
+
+    /* ------- div -------- */
+    #info {
+        bottom: 0;
+        font-size: 11px;
+    }
+
+#comments li {
+    list-style-type: none; /* Убираем маркеры */
+    margin-bottom: 10px;
+}
+#comments #text-comment {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding: 5px;
+    width: 100%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#comments div.list-comment {
+    padding: 3px;
+}
+
+#comments div.name-user-comment {
+    font-size: 12px;
+    padding-left: 3px;
+}
+
+#comments div.time-user-comment {
+    font-size: 11px;
+    color: #666666;
+    padding-left: 3px;
+    padding-right: 5px;
+}
+
+#comments div.text-comment {
+    padding: 5px;
+    padding-left: 3px;
+}
+
+#comments div.name-user-comment,
+#comments div.text-comment,
+#comments div.time-user-comment {
+    margin-left: 43px;
+}
+
+#comments span.complaint,
+#comments span.delete-comment {
+    float: right;
+}
+
+#browserPhoto #loader-bigphoto {
+    position: absolute;
+}
+
+/****************************************/
+/* Блок управления просмотра фотографий */
+/****************************************/
+#managing {
+    position: absolute;
+    height: 100%;
+}
+
+/* Стрелка "Предыдущее фотография" и "Следующая фотография". */
+#prev,
+#next {
+    display: flex;
+    float: left;
+    height: 100%;
+    align-items: center;
+}
+
+#prev {
+    width: 18%;
+}
+
+#next {
+    width: 82%;
+    justify-content: flex-end;
+}
+
+#prev span,
+#next span {
+    padding: 10px;
+    font-size: 36px;
+    color: #FFF;
+}
