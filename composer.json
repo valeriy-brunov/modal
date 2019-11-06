@@ -1,6 +1,6 @@
 {
     "name": "valeriy-brunov/modal",
-    "description": "Modal плагин для CakePHP",
+    "description": "Modal плагин для CakePHP, для формирования и работы с модальными (всплывающими) окнами",
     "type": "cakephp-plugin",
     "home": "https://github.com/valeriy-brunov/modal",
     "license": "MIT",
