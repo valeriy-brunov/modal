@@ -1,11 +1,52 @@
-# Modal plugin for CakePHP
+# Modal плагин для CakePHP
 
-## Installation
+Показывает часть страницы (часть html вёрстки) в виде модального окна.
 
-You can install this plugin into your CakePHP application using [composer](https://getcomposer.org).
+## Инсталяция
 
-The recommended way to install composer packages is:
+Вы можете установить этот плагин в свое приложение CakePHP с помощью [composer](https://getcomposer.org).
+
+Установка плагина:
 
 ```
-composer require valeriy-brunov/modal
+$ sudo composer require valeriy-brunov/modal
+$ sudo composer dumpautoload
 ```
+
+#### Инициализация
+
+В основном шаблоне страницы (такие шаблоны располагаются в .../scr/Template/Layout/...) сразу после тега 'body' необходимо указать место, куда будет вставляться html код для отображения в виде модального окна:
+
+```php
+<?php
+/**
+ * Отображение модальных окон.
+ */
+?>
+<?= $this->fetch('modal') ?>
+```
+
+Далее в шаблоне страницы верстку html кода, которая будет показана ввиде модального окна, необходимо заключить между тегами:
+
+```php
+<?php
+/**
+ * Блок представления 'NameBlock'.
+ */
+?>
+<?php $this->start('NameBlock') ?>
+// Здесь должна располагаться верстка html кода, которая может быть показана ввиде модального окна.
+<?php
+/**
+ * Конец блока.
+ */
+?>
+<?php $this->end() ?>
+```
+
+NameBlock - имя блока должно быть индивидуально для каждого модального окна.
+
+
+
+
+
