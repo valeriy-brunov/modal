@@ -50,7 +50,7 @@ $ sudo composer dumpautoload
  * Модальное окно с листингом альбомов.
  */
 ?>
-<?= $this->element('modal', [
+<?= $this->element('Modal.modal', [
 	'id_modal' => 'id_модального_окна',
 	'content_modal' => $this->fetch('NameBlock'),
 ]) ?>

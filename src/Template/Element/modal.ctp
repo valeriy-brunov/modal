@@ -84,3 +84,11 @@
  */
 ?>
 <?php $this->end() ?>
+
+<?php
+/**
+ * CSS и JS.
+ */
+?>
+<?= $this->Html->script('Modal.modal', ['block' => true]) ?>
+<?= $this->Html->css('Modal.modal', ['block' => true]) ?>
